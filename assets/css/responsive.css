@@ -1,0 +1,69 @@
+@media screen and (max-width: 1600px) {
+    #section2 {
+        height: 1000px;
+    }
+}
+@media screen and (max-width: 1400px) {
+    footer {
+        height: 400px;
+    }
+}
+@media screen and (max-width: 1200px) {
+    #section1 {
+        height: 600px;
+    } 
+    #section2 .knjige a {
+        font-size: 14px;
+    }
+    #section2 .card2::before {
+        content: none;
+    }
+    #section2 img {
+        padding: 5px;
+    }
+    #section3 {
+        height: 1000px;
+    }
+    #taster {
+        width: 30%;
+        right: 100px;
+    }
+    #mejl {
+        width: 70%;
+        position: relative;
+        right: 100px;
+    }
+    footer {
+        height: 800px;
+    }
+}
+@media screen and (max-width: 1020px) {
+    #section2 {
+        height: 1400px;
+    }
+
+}
+@media screen and (max-width: 790px) {
+    #section3 {
+        height: 1800px;
+    }
+    #taster {
+        width: 50%;
+        right: 100px; 
+    }
+    #mejl {
+        width: 70%;
+        position: relative;
+        right: 200px;
+    }
+}
+@media screen and (max-width: 630px) {
+    #section2 {
+        height: 1700px;
+    }
+}
+@media screen and (max-width: 430px) {
+    #section2 {
+        height: 2800px;
+    }
+} 

@@ -11,15 +11,15 @@ function ajaxCallback(url, result){
 }
 
 window.onload = function(){
-    ajaxCallback("../assets/data/meni.json", function(result){
+    ajaxCallback("assets/data/meni.json", function(result){
         ispisiMeni(result);
     })
 
-    ajaxCallback("../assets/data/knjige.json", function(result){
+    ajaxCallback("assets/data/knjigeJSON.json", function(result){
         ispisiKnjige8Mart(result);
     })
 
-    ajaxCallback("../assets/data/pokloni.json", function(result){
+    ajaxCallback("assets/data/pokloni.json", function(result){
         ispisPokloni(result);
     })
 }
@@ -56,7 +56,7 @@ function ispisiKnjige8Mart(nizKnjige8Mart) {
 
 
 var prviBlokNaslovi = ["Knjige", "Šolje", "Sveske", "Pernice"];
-var prviBlokSlike = ["../assets/img/ikonicaKnjiga2.png", "../assets/img/ikonicaSolja1.png",  "../assets/img/ikonicaSveska2.png", "../assets/img/ikonicaPernica2.png"];
+var prviBlokSlike = ["assets/img/ikonicaKnjiga2.png", "assets/img/ikonicaSolja1.png",  "assets/img/ikonicaSveska2.png", "assets/img/ikonicaPernica2.png"];
 
 var prviBlokIspis = "";
 for (var i = 0; i < prviBlokNaslovi.length; i++) {

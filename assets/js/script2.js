@@ -708,8 +708,12 @@ function filtrirajPoKategoriji(kategorija) {
 $(document).on("change", "#ddlKat", function() {
     let izabranaKategorija = $(this).val();
     console.log(izabranaKategorija);
-    let filtriraniProizvodi = filtrirajPoKategoriji(izabranaKategorija);
-    ispisiProizvode(filtriraniProizvodi);
+    if (izabranaKategorija === "0") {
+        ispisiProizvode(sve);
+    } else {
+        let filtriraniProizvodi = filtrirajPoKategoriji(izabranaKategorija);
+        ispisiProizvode(filtriraniProizvodi);
+    }
     $("#sviProizvodi").addClass("klasaFilter");
     $("#prodavnica").addClass("klasaFilterProd");
     $("#prodavnica .col-3, .col-9").addClass("klasaFilterProd");

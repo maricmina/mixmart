@@ -22,27 +22,39 @@ window.onload = function(){
 
     ajaxCallback("assets/data/knjige.json", function(result){
         sviProizvodi = sviProizvodi.concat(result);
+        sacuvajLS("sveKnjige", result)
     })
     ajaxCallback("assets/data/sveske.json", function(result){
         sviProizvodi = sviProizvodi.concat(result);
+        sacuvajLS("sveSveske", result)
     })
     ajaxCallback("assets/data/novcanici.json", function(result){
         sviProizvodi = sviProizvodi.concat(result);
+        sacuvajLS("sviNovcanici", result)
     })
     ajaxCallback("assets/data/prenosiveSolje.json", function(result){
         sviProizvodi = sviProizvodi.concat(result);
+        sacuvajLS("svePrenosiveSolje", result)
     })
     ajaxCallback("assets/data/solje.json", function(result){
         sviProizvodi = sviProizvodi.concat(result);
+        sacuvajLS("sveSolje", result)
     })
     ajaxCallback("assets/data/stilorke.json", function(result){
         sviProizvodi = sviProizvodi.concat(result);
+        sacuvajLS("sveStilorke", result)
     })
     ajaxCallback("assets/data/pokloni.json", function(result){
         sviProizvodi = sviProizvodi.concat(result);
+        sacuvajLS("sviPokloni", result)
         
         ispisiProizvode(sviProizvodi);
     }); 
+
+
+    $(document).on("change", "#ddlKat", promena);
+    $(document).on("change", "#sort", promena);
+    $(document).on("change", "#inputZaFunkciju", promena);
 } 
   
   let sve = [
@@ -600,6 +612,22 @@ window.onload = function(){
             }
   ];
 
+
+
+function promena() {
+    let izabranaKategorija = $("#ddlKat").val();
+    let proizvodi = dohvatiIzLS("sviProizvodi");
+
+    if (izabranaKategorija === "0") {
+        ispisiProizvode(proizvodi);
+    } else {
+        let filtriraniProizvodi = filtrirajPoKategoriji(izabranaKategorija);
+        ispisiProizvode(filtriraniProizvodi);
+    }
+}
+
+
+
 function ispisiMeni(nizMeni) {
     let sadrzajZaIspis = "";
 
@@ -646,15 +674,23 @@ function ispisiProizvode(niz) {
 }
 
 
-$("#inputZaFunkciju").on("input", function() {
-    let unos = $(this).val().toLowerCase();
+function sacuvajLS(naziv, vrednost){
+    localStorage.setItem(naziv, JSON.stringify(vrednost));
+}
+function dohvatiIzLS(naziv){
+    return JSON.parse(localStorage.getItem(naziv));
+}
 
-    let filtriraniProizvodi = sve.filter(function(proizvod) {
-        return proizvod.naziv.toLowerCase().includes(unos);
-    })
 
-    ispisiProizvode(filtriraniProizvodi);
-});
+
+// $("#inputZaFunkciju").on("input", function() {
+//     let filtrirano = dohvatiIzLS("filtriraniProizvodi");
+//     let unos = $(this).val().toLowerCase();
+//     filtrirano = sve.filter(function(proizvod) {
+//         return proizvod.naziv.toLowerCase().includes(unos);
+//     });
+//     ispisiProizvode(sve);
+// });
 
 
 
@@ -698,23 +734,71 @@ $(document).on("change", "#sort", function() {
 })
 
 
+// function filtrirajPoKategoriji(kategorija) {
+//     return sve.filter(function(sve) {
+//         return sve.kategorija === kategorija;
+//     });
+// }
+
+// $(document).on("change", "#ddlKat", function() {
+//     let izabranaKategorija = $(this).val();
+//     let filtriraniProizvodi = [];
+
+//     if (izabranaKategorija === "0") {
+//         ispisiProizvode(sve);
+//     } 
+//     else {
+//         filtriraniProizvodi = filtrirajPoKategoriji(izabranaKategorija);
+//         ispisiProizvode(filtriraniProizvodi);
+//     }
+
+//     $("#sviProizvodi").addClass("klasaFilter");
+//     $("#prodavnica").addClass("klasaFilterProd");
+//     $("#prodavnica .col-3, .col-9").addClass("klasaFilterProd");
+
+//     sacuvajLS("filtriraniProizvodi", filtriraniProizvodi);
+// });
+
+
 function filtrirajPoKategoriji(kategorija) {
-    return sve.filter(function(sve) {
-        return sve.kategorija === kategorija;
+    return sve.filter(function(proizvod) {
+        return proizvod.kategorija === kategorija;
     });
 }
 
-
 $(document).on("change", "#ddlKat", function() {
     let izabranaKategorija = $(this).val();
-    console.log(izabranaKategorija);
+    let filtriraniProizvodi = [];
+
     if (izabranaKategorija === "0") {
         ispisiProizvode(sve);
+        sacuvajLS("filtriraniProizvodi", sve); // Čuvamo sve proizvode u lokalnom skladištu
     } else {
-        let filtriraniProizvodi = filtrirajPoKategoriji(izabranaKategorija);
+        filtriraniProizvodi = filtrirajPoKategoriji(izabranaKategorija);
         ispisiProizvode(filtriraniProizvodi);
+        sacuvajLS("filtriraniProizvodi", filtriraniProizvodi); // Čuvamo filtrirane proizvode u lokalnom skladištu
     }
+
     $("#sviProizvodi").addClass("klasaFilter");
     $("#prodavnica").addClass("klasaFilterProd");
     $("#prodavnica .col-3, .col-9").addClass("klasaFilterProd");
+});
+
+$("#inputZaFunkciju").on("input", function() {
+    let unos = $(this).val().toLowerCase();
+    let filtriraniProizvodi = dohvatiIzLS("filtriraniProizvodi");
+
+    if (!filtriraniProizvodi || filtriraniProizvodi.length === 0) {
+        // Ako nema prethodno filtriranih proizvoda, koristi sve proizvode za filtriranje teksta
+        filtriraniProizvodi = sve.filter(function(proizvod) {
+            return proizvod.naziv.toLowerCase().includes(unos);
+        });
+    } else {
+        // Ako ima prethodno filtriranih proizvoda, filtriraj ih prema unetom tekstu
+        filtriraniProizvodi = filtriraniProizvodi.filter(function(proizvod) {
+            return proizvod.naziv.toLowerCase().includes(unos);
+        });
+    }
+
+    ispisiProizvode(filtriraniProizvodi);
 });

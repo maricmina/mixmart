@@ -36,8 +36,6 @@ function ispisiMeni(nizMeni) {
     $("#meniispis").html(sadrzajZaIspis);
 }
 
-
-
 function ispisiKnjige8Mart(nizKnjige8Mart) {
     let sadrzajZaIspis = "";
 
@@ -52,8 +50,6 @@ function ispisiKnjige8Mart(nizKnjige8Mart) {
 
     $("#knjige-8mart").html(sadrzajZaIspis);
 }
-
-
 
 var prviBlokNaslovi = ["Knjige", "Šolje", "Sveske", "Pernice"];
 var prviBlokSlike = ["assets/img/ikonicaKnjiga2.png", "assets/img/ikonicaSolja1.png",  "assets/img/ikonicaSveska2.png", "assets/img/ikonicaPernica2.png"];
@@ -72,8 +68,6 @@ for (var i = 0; i < prviBlokNaslovi.length; i++) {
 
 document.getElementById("prviBlok").innerHTML = prviBlokIspis;
 
-
-
 function ispisPokloni(pokloni) {
     var sadrzajZaIspisPoklona = "";
     for(let poklon of pokloni) {
@@ -91,5 +85,21 @@ function ispisPokloni(pokloni) {
     $("#pokloni").html(sadrzajZaIspisPoklona);
 }
 
+function validacijaMejl() {
+    var mailRegEx = /^[a-zA-Z\d._]+@(gmail\.com|ict\.edu\.rs|yahoo\.com)$/;
+    var mail = document.getElementById('mejl').value;
+    console.log(mail);
 
+    if(mailRegEx.test(mail)) {
+        document.getElementById('span').textContent = "Uspešno ste prosledili mejl!"
+        document.getElementById('span').classList.add('ok');
+        return true;
+    }
+    else {
+        document.getElementById('span').textContent = "Mejl mora početi slovom i sadržati '@'!";
+        document.getElementById('span').classList.remove('ok');
+        document.getElementById('span').classList.add('err');
+        return false;
+    }
+}
 

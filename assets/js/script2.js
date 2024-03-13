@@ -22,31 +22,24 @@ window.onload = function(){
 
     ajaxCallback("assets/data/knjige.json", function(result){
         sviProizvodi = sviProizvodi.concat(result);
-        sacuvajLS("sveKnjige", result)
     })
     ajaxCallback("assets/data/sveske.json", function(result){
         sviProizvodi = sviProizvodi.concat(result);
-        sacuvajLS("sveSveske", result)
     })
     ajaxCallback("assets/data/novcanici.json", function(result){
         sviProizvodi = sviProizvodi.concat(result);
-        sacuvajLS("sviNovcanici", result)
     })
     ajaxCallback("assets/data/prenosiveSolje.json", function(result){
         sviProizvodi = sviProizvodi.concat(result);
-        sacuvajLS("svePrenosiveSolje", result)
     })
     ajaxCallback("assets/data/solje.json", function(result){
         sviProizvodi = sviProizvodi.concat(result);
-        sacuvajLS("sveSolje", result)
     })
     ajaxCallback("assets/data/stilorke.json", function(result){
         sviProizvodi = sviProizvodi.concat(result);
-        sacuvajLS("sveStilorke", result)
     })
     ajaxCallback("assets/data/pokloni.json", function(result){
         sviProizvodi = sviProizvodi.concat(result);
-        sacuvajLS("sviPokloni", result)
         
         ispisiProizvode(sviProizvodi);
     }); 
@@ -57,6 +50,7 @@ window.onload = function(){
     $(document).on("change", "#inputZaFunkciju", promena);
 } 
   
+
   let sve = [
           {
                 "id": 1,
@@ -119,7 +113,7 @@ window.onload = function(){
                 "kategorija": "Knjige"
             },
             {
-                "id": 1,
+                "id": 6,
                 "naziv": "Novčanik LAST MOCCA",
                 "cena": {
                     "cenaSaSajta": "2090 RSD",
@@ -131,7 +125,7 @@ window.onload = function(){
                 "kategorija": "Novčanici"
             },
             {
-                "id": 2,
+                "id": 7,
                 "naziv": "Novčanik LAST BLACK",
                 "cena": {
                     "cenaSaSajta": "2090 RSD",
@@ -143,7 +137,7 @@ window.onload = function(){
                 "kategorija": "Novčanici"
             },
             {
-                "id": 1,
+                "id": 8,
                 "naziv": "FABER CASTELL set notes",
                 "cena": {
                     "cenaSaSajta": "2000 RSD",
@@ -155,7 +149,7 @@ window.onload = function(){
                 "kategorija": "Pokloni"
             },
             {
-                "id": 2,
+                "id": 9,
                 "naziv": "MOLESKINE set za skiciranje",
                 "cena": {
                     "cenaSaSajta": "3200 RSD",
@@ -167,7 +161,7 @@ window.onload = function(){
                 "kategorija": "Pokloni"
             },
             {
-                "id": 3,
+                "id": 10,
                 "naziv": "Notes MOLESKINE Passion Journal Wine",
                 "cena": {
                     "cenaSaSajta": "1250 RSD",
@@ -179,7 +173,7 @@ window.onload = function(){
                 "kategorija": "Pokloni"
             },
             {
-                "id": 4,
+                "id": 11,
                 "naziv": "Notes A5 MOLESKINE Classic Soft",
                 "cena": {
                     "cenaSaSajta": "3050 RSD",
@@ -191,7 +185,7 @@ window.onload = function(){
                 "kategorija": "Pokloni"
             },
             {
-                "id": 1,
+                "id": 12,
                 "naziv": "Staklena flaša EGRET ISLAND",
                 "cena": {
                     "cenaSaSajta": "1400 RSD",
@@ -203,7 +197,7 @@ window.onload = function(){
                 "kategorija": "Prenosive šolje"
             },
             {
-                "id": 2,
+                "id": 13,
                 "naziv": "Flaša za vodu ZELENA",
                 "cena": {
                     "cenaSaSajta": "1420 RSD",
@@ -215,7 +209,7 @@ window.onload = function(){
                 "kategorija": "Prenosive šolje"
             },
             {
-                "id": 3,
+                "id": 14,
                 "naziv": "BIOLOCO putna šolja TERRAZZO",
                 "cena": {
                     "cenaSaSajta": "1999 RSD",
@@ -227,7 +221,7 @@ window.onload = function(){
                 "kategorija": "Prenosive šolje"
             },
             {
-                "id": 4,
+                "id": 15,
                 "naziv": "BIOLOCO putna šolja TAKE A SIP",
                 "cena": {
                     "cenaSaSajta": "1999 RSD",
@@ -239,7 +233,7 @@ window.onload = function(){
                 "kategorija": "Prenosive šolje"
             },
             {
-                "id": 5,
+                "id": 16,
                 "naziv": "BIOLOCO putna šolja ORANGE LEAVES",
                 "cena": {
                     "cenaSaSajta": "1999 RSD",
@@ -251,7 +245,7 @@ window.onload = function(){
                 "kategorija": "Prenosive šolje"
             },
             {
-                "id": 6,
+                "id": 17,
                 "naziv": "BIOLOCO putna šolja ABSTRACT PATTERN",
                 "cena": {
                     "cenaSaSajta": "1999 RSD",
@@ -263,7 +257,7 @@ window.onload = function(){
                 "kategorija": "Prenosive šolje"
             },
             {
-                "id": 1,
+                "id": 18,
                 "naziv": "Šolja ROZE PRUGE u kutiji",
                 "cena": {
                     "cenaSaSajta": "756 RSD", 
@@ -275,7 +269,7 @@ window.onload = function(){
                 "kategorija": "Šolje"
             },
             {
-                "id": 2,
+                "id": 19,
                 "naziv":"Šolja CRNE PRUGE u kutiji",
                 "cena": {
                     "cenaSaSajta": "756 RSD", 
@@ -287,7 +281,7 @@ window.onload = function(){
                 "kategorija": "Šolje"
             },
             {
-                "id": 3,
+                "id": 20,
                 "naziv":"Šolja PAC-MAN",
                 "cena": {
                     "cenaSaSajta": "807 RSD",
@@ -299,7 +293,7 @@ window.onload = function(){
                 "kategorija": "Šolje"
             },
             {
-                "id": 4,
+                "id": 21,
                 "naziv":"Šolja POKEMON",
                 "cena": {
                     "cenaSaSajta": "1274 RSD",
@@ -311,7 +305,7 @@ window.onload = function(){
                 "kategorija": "Šolje"
             },
             {
-                "id": 5,
+                "id": 22,
                 "naziv": "Keramička šolja SIVA SOVA",
                 "cena": {
                     "cenaSaSajta": "1019 RSD",
@@ -323,7 +317,7 @@ window.onload = function(){
                 "kategorija": "Šolje"
             },
             {
-                "id": 6,
+                "id": 23,
                 "naziv": "Šolja EUCALYPTUS XXL",
                 "cena": {
                     "cenaSaSajta": "2124 RSD",
@@ -335,7 +329,7 @@ window.onload = function(){
                 "kategorija": "Šolje"
             },
             {
-                "id": 7,
+                "id": 24,
                 "naziv": "Šolja GOLDEN GINGKO XXL",
                 "cena": {
                     "cenaSaSajta": "2124 RSD",
@@ -347,7 +341,7 @@ window.onload = function(){
                 "kategorija": "Šolje"
             },
             {
-                "id": 8,
+                "id": 25,
                 "naziv": "Velika porcelanska šolja LIŠĆE",
                 "cena": {
                     "cenaSaSajta": "1643 RSD",
@@ -359,7 +353,7 @@ window.onload = function(){
                 "kategorija": "Šolje"
             },
             {
-                "id": 9,
+                "id": 26,
                 "naziv": "Staklena čaša za piće LIST",
                 "cena": {
                     "cenaSaSajta": "1359 RSD",
@@ -371,7 +365,7 @@ window.onload = function(){
                 "kategorija": "Šolje"
             },
             {
-                "id": 10,
+                "id": 27,
                 "naziv": "Porcelanska šolja MUSIC LOVER",
                 "cena": {
                     "cenaSaSajta": "1487 RSD",
@@ -383,7 +377,7 @@ window.onload = function(){
                 "kategorija": "Šolje"
             },
             {
-                "id": 1,
+                "id": 28,
                 "naziv": "Pernica TODAY",
                 "cena": {
                     "cenaSaSajta": "800 RSD",
@@ -395,7 +389,7 @@ window.onload = function(){
                 "kategorija": "Pernice"
             },
             {
-                "id": 2,
+                "id": 29,
                 "naziv": "Pernica STARS",
                 "cena": {
                     "cenaSaSajta": "1060 RSD",
@@ -407,7 +401,7 @@ window.onload = function(){
                 "kategorija": "Pernice"
             },
             {
-                "id": 3,
+                "id": 30,
                 "naziv": "Pernica CUTE! Aqua",
                 "cena": {
                     "cenaSaSajta": "1060 RSD",
@@ -419,7 +413,7 @@ window.onload = function(){
                 "kategorija": "Pernice"
             },
             {
-                "id": 4,
+                "id": 31,
                 "naziv": "Pernica CUTE! Violet",
                 "cena": {
                     "cenaSaSajta": "1060 RSD",
@@ -431,7 +425,7 @@ window.onload = function(){
                 "kategorija": "Pernice"
             },
             {
-                "id": 5,
+                "id": 32,
                 "naziv": "Pernica BLACKFIT8 - ZELENA",
                 "cena": {
                     "cenaSaSajta": "830 RSD",
@@ -443,7 +437,7 @@ window.onload = function(){
                 "kategorija": "Pernice"
             },
             {
-                "id": 6,
+                "id": 33,
                 "naziv": "Pernica BLACKFIT8 - PLAVA",
                 "cena": {
                     "cenaSaSajta": "830 RSD",
@@ -455,7 +449,7 @@ window.onload = function(){
                 "kategorija": "Pernice"
             },
             {
-                "id": 7,
+                "id": 34,
                 "naziv": "Četvrtasta pernica WEDNESDAY UNIFORM",
                 "cena": {
                     "cenaSaSajta": "790 RSD",
@@ -467,7 +461,7 @@ window.onload = function(){
                 "kategorija": "Pernice"
             },
             {
-                "id": 8,
+                "id": 35,
                 "naziv": "Pernica sa tri pregrade SUPERUP",
                 "cena": {
                     "cenaSaSajta": "970 RSD",
@@ -479,7 +473,7 @@ window.onload = function(){
                 "kategorija": "Pernice"
             },
             {
-                "id": 1,
+                "id": 36,
                 "naziv": "Sveska A4 sa spiralom na kvadratiće",
                 "cena": {
                     "cenaSaSajta": "450 RSD",
@@ -491,7 +485,7 @@ window.onload = function(){
                 "kategorija": "Sveske"
             },
             {
-                "id": 2,
+                "id": 37,
                 "naziv": "Sveska A5 na kvadratiće KRAFT",
                 "cena": {
                     "cenaSaSajta": "160 RSD",
@@ -503,7 +497,7 @@ window.onload = function(){
                 "kategorija": "Sveske"
             },
             {
-                "id": 3,
+                "id": 38,
                 "naziv": "Sveska A5 na kvadratiće",
                 "cena": {
                     "cenaSaSajta": "140 RSD",
@@ -515,7 +509,7 @@ window.onload = function(){
                 "kategorija": "Sveske"
             },
             {
-                "id": 4,
+                "id": 39,
                 "naziv": "SVESKA A5 KARO SPACE TRAVELER",
                 "cena": {
                     "cenaSaSajta": "105 RSD",
@@ -527,7 +521,7 @@ window.onload = function(){
                 "kategorija": "Sveske"
             },
             {
-                "id": 5,
+                "id": 40,
                 "naziv": "SVESKA A5 LATAJN SPACE TRAVELER",
                 "cena": {
                     "cenaSaSajta": "105 RSD",
@@ -539,7 +533,7 @@ window.onload = function(){
                 "kategorija": "Sveske"
             },
             {
-                "id": 6,
+                "id": 41,
                 "naziv": "Sveska A4 LIKE Premium dikto 52l", 
                 "cena": {
                     "cenaSaSajta": "199 RSD",
@@ -551,7 +545,7 @@ window.onload = function(){
                 "kategorija": "Sveske"
             },
             {
-                "id": 7,
+                "id": 42,
                 "naziv": "Sveska A6 SPIRAL", 
                 "cena": {
                     "cenaSaSajta": "450 RSD",
@@ -563,7 +557,7 @@ window.onload = function(){
                 "kategorija": "Sveske"
             },
             {
-                "id": 8,
+                "id": 43,
                 "naziv": "Sveska A6 SPIRAL", 
                 "cena": {
                     "cenaSaSajta": "450 RSD",
@@ -575,7 +569,7 @@ window.onload = function(){
                 "kategorija": "Sveske"
             },
             {
-                "id": 9,
+                "id": 44,
                 "naziv": "Sveska SPIRAL", 
                 "cena": {
                     "cenaSaSajta": "500 RSD",
@@ -587,7 +581,7 @@ window.onload = function(){
                 "kategorija": "Sveske"
             },
             {
-                "id": 10,
+                "id": 45,
                 "naziv": "Sveska MAP SPIRAL", 
                 "cena": {
                     "cenaSaSajta": "500 RSD",
@@ -599,7 +593,7 @@ window.onload = function(){
                 "kategorija": "Sveske"
             },
             {
-                "id": 11,
+                "id": 46,
                 "naziv": "Sveska Panda SPIRAL", 
                 "cena": {
                     "cenaSaSajta": "500 RSD",
@@ -612,6 +606,11 @@ window.onload = function(){
             }
   ];
 
+
+// // sacuvajLS("sviProizvodiLS", sve);
+// let sviProizvodiLS = dohvatiIzLS("sviProizvodiLS");
+// ucitajProizvode(sviProizvodiLS);
+  
 
 
 function promena() {
@@ -627,16 +626,15 @@ function promena() {
 }
 
 
-
 function ispisiMeni(nizMeni) {
     let sadrzajZaIspis = "";
 
     for(let meni of nizMeni) {
         sadrzajZaIspis += `<li class="nav-item mx-3">
-                            <a class="nav-link text-dark hover" href="${meni.href}"><p>${meni.text}</p></a>
-                           </li>`;
+        <a class="nav-link text-dark hover" href="${meni.href}"><p>${meni.text}</p></a>
+      </li>`;
     }
-
+    
     $("#meniispis").html(sadrzajZaIspis);
 }
 
@@ -658,29 +656,20 @@ function ispisiProizvode(niz) {
     let ispisProizvoda = ""; 
 
     for(let proizvod of niz) { 
-        ispisProizvoda += `<div class="col-xl-3 d-flex justify-content-around align-items-center card2">
-                            <div class="slikaDiv">
-                                <img src="${proizvod.src}" alt="${proizvod.naziv}" />
-                            </div>
-                            <div id="tekstProizvoda">
-                                <h6 class="text-center">${proizvod.naziv}</h6>
-                                <p class="text-center">${proizvod.cena.cenaSaSajta}</p>
-                                <input class="form-control" type="submit" value="Dodaj u korpu" />
-                            </div>
+        ispisProizvoda += `<div class="col-xl-3 d-flex justify-content-around align-items-center card2 shop-items">
+                                <div class="slikaDiv">
+                                    <img src="${proizvod.src}" alt="${proizvod.naziv}" class="shop-item-image"/>
+                                </div>
+                                <div id="tekstProizvoda">
+                                    <h6 class="text-center shop-item-title">${proizvod.naziv}</h6>
+                                    <p class="text-center shop-item-price">${proizvod.cena.cenaSaSajta}</p>
+                                    <button class="btn btn-primary shop-item-button" type="button">Dodaj u korpu</button>
+                                </div>
                             </div>`;
     }
     
     $("#sviProizvodi").html(ispisProizvoda);
 }
-
-
-function sacuvajLS(naziv, vrednost){
-    localStorage.setItem(naziv, JSON.stringify(vrednost));
-}
-function dohvatiIzLS(naziv){
-    return JSON.parse(localStorage.getItem(naziv));
-}
-
 
 
 // $("#inputZaFunkciju").on("input", function() {

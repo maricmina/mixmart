@@ -17,13 +17,13 @@ window.onload = function(){
 }
 
 function ispisiMeni(nizMeni) {
-    let sadrzajZaIspis = "";
+  let sadrzajZaIspis = "";
 
-    for(let meni of nizMeni) {
-        sadrzajZaIspis += `<li class="nav-item mx-3">
-        <a class="nav-link text-dark hover" href="${meni.href}"><p>${meni.text}</p></a>
-      </li>`;
-    }
+  for(let meni of nizMeni) {
+      sadrzajZaIspis += `<li class="nav-item mx-3">
+      <a class="nav-link text-dark hover" href="${meni.href}"><p>${meni.text}</p></a>
+    </li>`;
+  }
 
-    $("#meniispis").html(sadrzajZaIspis);
+  $("#meniispis").html(sadrzajZaIspis);
 }

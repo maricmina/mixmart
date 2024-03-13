@@ -36,6 +36,10 @@
     footer {
         height: 800px;
     }
+    #futer {
+        height: auto;
+        top: 5300px;
+    }
 }
 @media screen and (max-width: 1020px) {
     #section2 {
@@ -68,6 +72,7 @@
         position: relative;
         right: 200px;
     }
+
 }
 @media screen and (max-width: 750px) {
     #slika {
@@ -75,6 +80,10 @@
     }
     #tekst, #biografija {
         margin-left: 50px;
+    }
+    #futer {
+        height: auto;
+        top: 15055px;
     }
 }
 @media screen and (max-width: 630px) {

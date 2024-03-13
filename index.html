@@ -84,15 +84,54 @@
                             <input class="borderClass" type="text" id="mejl" class="form-control" placeholder="   Vaš e-mail"/> 
                         </div>
                         <div class="col-6 text-center">
-                            <input type="button" value="Prijavi se" id="taster" />
+                            <input type="button" value="Prijavi se" id="taster" onclick="validacijaMejl()"/>
                         </div>
                         <div id="cBox">
                             <input type="checkbox"> Želim da primam obaveštenja o vestima 
+                        </div>
+                        <div id="spanDiv" class="my-5 text-center">
+                            <span class="my-4" id="span"></span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- <section id="section5">
+            <div class="container-fluid d-flex justify-content-around">
+                <div class="row" id="prijava">
+                    <h2 class="text-center pt-5 pb-2">Postani naš član!</h2>
+                    <h5 class="text-center mb-2">Osvoji dodatne popuste</h5>
+                    <span id="prijavaSpan" class="text-center displej mb-5">E-mail adresa mora početi slovom ili brojem i sadržati "@"</span>
+
+                    <div class="col-6 prvi d-flex justify-content-around mt-5">
+                        <form>
+                            Ime i prezime: <input type="text" id="ime" class="form-control mx-auto my-3 borderClass" />
+                            E-mail: <input type="text" id="mejlAdresa" class="form-control mx-auto my-3 borderClass" />
+                        </form>
+                    </div>
+                    <div class="col-6 d-flex justify-content-around mt-4">
+                        <form>
+                            Uzrast: 
+                            <select name="zanimanje" id="ddl" class="form-control mx-auto my-3 mb-3">
+                                <option value="0">Izaberi</option>
+                                <option value="1">Učenik</option>
+                                <option value="2">Student</option>
+                                <option value="3">Zaposlen</option>
+                            </select>
+                            <div id="obavestenja">
+
+                                <p>Pol: </p>
+                                <input type="radio" name="pol" id="m">Muški
+                                <input type="radio" name="pol" id="z">Ženski
+                            </div>
+                                
+                        </form>
+                    </div>
+                    <input type="submit" value="Prijavi se" id="btn"/> <br/>
+                </div>
+            </div>
+        </section> -->
     </main>
 
     <footer>
@@ -109,8 +148,7 @@
                     <div id="linkovi" class="my-2 px-5 text-center">
                         <h4 class="text-light">OSTALI LINKOVI</h4>
                         <a href="sitemap.xml" target="_blank"><p>Sitemap</p></a>
-                        <a href="rss.xml" target="_blank"><p>RSS</p></a>
-                        <a href="dokumentacija.txt"><p>Dokumentacija</p></a>
+                        <a href="Dokumentacija.pdf"><p>Dokumentacija</p></a>
                     </div>
                 </div>
                 <div class="col-xl-4 col-md-8 mb-5">

@@ -68,7 +68,7 @@
                             <strong class="cart-total-title">Ukupno:</strong>
                             <span class="cart-total-price">0 RSD</span>
                         </div>
-                        <button class="btn-purchase" type="button">Kupi</button>
+                        <button class="btn-purchase" type="button" id="btn"><a href="#section5">Kupi</a></button>
                         <span id="spanKorpa"></span>
                     </div>
                     <div class="col-9 d-flex shop-items" id="sviProizvodi">
@@ -82,6 +82,48 @@
             </div>
         </section>
 
+        <section id="section5">
+            <div class="container">
+                <div class="row " id="prijava">
+                    <h2 class="text-center my-5">Kupovina</h2>
+                    <form class="d-flex justify-content-center">
+                        <div id="prvaKolona" class="col-xl-6">
+                            <div class="form-group mt-3">
+                                <label for="ime">Ime i prezime:</label>
+                                <input type="text" class="form-control borderClass" id="ime" placeholder="Unesite ime i prezime">
+                            </div>
+                            <div class="form-group mt-3">
+                                <label for="adresa">Adresa:</label>
+                                <input type="text" class="form-control borderClass" id="adresa" placeholder="Unesite adresu">
+                            </div>
+                        </div>
+                        <div id="drugaKolona" class="col-xl-6">
+                            <div class="form-group mt-3">
+                                <label for="vrstaIsporuke">Odaberi vrstu isporuke:</label>
+                                    <select class="form-control" id="vrstaIsporuke">
+                                        <option value="0">Izaberi</option>
+                                        <option value="1">Brza pošta</option>
+                                        <option value="2">Obična isporuka</option>
+                                    </select>
+                            </div>
+                            <div class="form-group mt-3">
+                                <label>Način plaćanja:</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="pol" id="pouzece" value="muski">
+                                    <label class="form-check-label" for="pouzece">Pouzećem</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="pol" id="kartica" value="zenski">
+                                    <label class="form-check-label" for="kartica">Platnom karticom</label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <span id="pretplataSpan" class="mt-5 text-center"></span>
+                    <button type="submit" id="prijaviSe" onclick="validacijaForma()">Prijavi se</button>
+                </div>
+            </div>
+        </section>
         
     </main>
 

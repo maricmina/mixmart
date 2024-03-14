@@ -38,8 +38,6 @@ function ispisiProizvode(niz) {
 function kupi() {
     $(".cart-items").empty();
     updateKorpa();
-    var span = document.getElementById("spanKorpa");
-    span.innerHTML = "<br/>Uspešno ste obavili kupovinu!";
 }
 
 function ukloni(event) {

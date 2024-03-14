@@ -7,6 +7,12 @@
     footer {
         height: 400px;
     }
+    #section5 {
+        top: 3700px;
+    }
+    #futer {
+        top: 3700px;
+    }
 }
 @media screen and (max-width: 1200px) {
     #section1 {
@@ -38,7 +44,14 @@
     }
     #futer {
         height: auto;
-        top: 5300px;
+        top: 6500px;
+    }
+    #section5 {
+        top: 6500px;
+    }
+    #section5 .form-group {
+        width: 100%;
+        padding: 0px 100px;
     }
 }
 @media screen and (max-width: 1020px) {
@@ -57,7 +70,18 @@
         width: 60%;
         margin-left: 140px;
     }
-
+    #futer {
+        height: auto;
+        top: 6700px;
+    }
+    #section5 {
+        height: 520px;
+        top: 6700px;
+    }
+    #section5 .form-group {
+        width: 100%;
+        padding: 0px 50px;
+    }
 }
 @media screen and (max-width: 790px) {
     #section3 {
@@ -82,8 +106,14 @@
         margin-left: 50px;
     }
     #futer {
-        height: auto;
-        top: 15055px;
+        top: 15800px;
+    }
+    #section5 {
+        top: 15800px;
+    }
+    #section5 .form-group {
+        width: 100%;
+        padding: 0px 20px;
     }
 }
 @media screen and (max-width: 630px) {
@@ -117,22 +147,39 @@
         right: 125px;
         margin-bottom: 50px;
     }
-    #section5 .form-group {
-        width: 100%;
-        text-align: center;
-    }
     #section5 #prvaKolona input, select {
         width: 50%;
         margin: 0px auto;
     }
-    #pretplatiSe {
+    #prijaviSe {
         width: 50%;
     }
-    #muski, #zenski {
+    #pouzece, #kartica {
         margin-left: 30px;
     }
     #drugaKolona .form-check {
         margin-right: 30px;
+    }
+    #futer {
+        top: 15700px;
+    }
+    #section5 {
+        top: 15700px;
+        height: 800px;
+    }
+    #section5 form {
+        width: 100%;
+    }
+    #section5 .form-group {
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+    }
+    #prvaKolona {
+        width: 100%;
+    }
+    #prvaKolona label, #drugaKolona label {
+        margin-bottom: 10px;
     }
 }
 @media screen and (max-width: 430px) {

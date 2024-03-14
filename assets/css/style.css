@@ -315,7 +315,7 @@ header #nav-slika {
     text-align: center;
 }
 
-#taster:hover, #pretplatiSe:hover {
+#taster:hover, #prijaviSe:hover {
     background-color: #fff;
     color: #00838d;
     border: 1px solid #00838d;
@@ -512,6 +512,15 @@ a i {
     color: #00838d;
 }
 
+#btn a {
+   color: #fff;
+   text-decoration: none;
+}
+
+#btn a:hover {
+    color: #00838d;
+}
+
 #cBox {
     position: relative;
     top: 100px;
@@ -533,7 +542,10 @@ a i {
 }
 
 #section5 {
-    height: 500px;
+    position: relative;
+    top: 3200px;
+    height: 550px;
+    background-color: #f8f9fa;
 }
 
 #section5 .form-group {
@@ -541,21 +553,17 @@ a i {
     margin: 0px auto;
 }
 
-#pretplatiSe {
+#prijaviSe {
     width: 15%;
     margin: 20px auto;
     right: 0px;
 }
 
-#ime, #prezime {
+#ime, #adresa {
     margin-left: 0px;
 }
 
-#section5 input, #vrstaPretplate {
-    background-color: #f8f9fa;
-}
-
-#vrstaPretplate {
+#vrstaIsporuke {
     border: none;
 }
 
@@ -567,7 +575,7 @@ a i {
     color: red;
 }
 
-#pretplatiSe {
+#prijaviSe {
     width: 20%;
     padding: 10px;
     background-color: #00838d;

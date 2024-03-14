@@ -749,3 +749,109 @@ $("#inputZaFunkciju").on("input", function() {
 
     ispisiProizvode(filtriraniProizvodi);
 });
+
+function validacijaForma() {
+    var ispravno = true;
+    var poruke = [];
+
+    if (!validacijaImeIPrezime()) {
+        ispravno = false;
+        poruke.push("Ime i prezime moraju početi velikim slovom i sadržati barem 3 karaktera!");
+    }
+
+    if (!validacijaPrijave()) {
+        ispravno = false;
+        poruke.push("Odaberite vrstu isporuke!");
+    }
+
+    if (!validacijaRadio()) {
+        ispravno = false;
+        poruke.push("Odaberite način plaćanja!");
+    }
+
+    if (!validacijaAdresa()) {
+        ispravno = false;
+        poruke.push("Adresa nije u ispravnom formatu!");
+    }
+
+    if (ispravno) {
+        let span = document.getElementById("pretplataSpan");
+        span.innerHTML = "Uspešno ste se obavili kupovinu!";
+        span.classList.remove("greska");
+        span.classList.add("uspesno");
+    } else {
+        let span = document.getElementById("pretplataSpan");
+        span.innerHTML = poruke.join("<br>");
+        span.classList.remove("uspesno");
+        span.classList.add("greska");
+        span.classList.add("vidljiv");
+    }
+}
+
+
+function validacijaImeIPrezime() {
+    var imeRegEx = /^[A-Z][a-z]{2,10}( [A-Z][a-z]{2,15})?$/;
+    var ime = document.getElementById('ime').value;
+
+    if(imeRegEx.test(ime)) {
+        return true;
+    }
+    else {
+        let span = document.getElementById("pretplataSpan");
+        span.innerHTML = "Ime i prezime moraju početi velikim slovom i sadržati barem 3 karaktera!"
+        span.classList.remove("uspesno");
+        span.classList.add("greska");
+        
+        return false;
+    }
+}
+
+function validacijaAdresa() {
+    const adresaRegEx = /^(\d{1,5})?\s*([a-zA-ZćčžšđĆČŽŠĐ]+\s*)+\d{0,5}(\s*[,.-]?\s*[a-zA-ZćčžšđĆČŽŠĐ]+\s*\d{0,5})*$/;
+    var adresa = document.getElementById('adresa').value;
+    
+    if(adresaRegEx.test(adresa)) {
+        return true;
+    }
+    else {
+        let span = document.getElementById("pretplataSpan");
+        span.innerHTML = "Adresa nije u ispravnom formatu!"
+        span.classList.remove("uspesno");
+        span.classList.add("greska");
+        
+        return false;
+    }
+}
+
+function validacijaPrijave() {
+    var isporuka = document.getElementById("vrstaIsporuke").value;
+
+    if (isporuka === "0") {
+        let span = document.getElementById("pretplataSpan");
+        span.innerHTML = "Odaberite vrstu isporuke!";
+        span.classList.remove("uspesno");
+        span.classList.add("greska");
+
+        return false;
+    } 
+    else {
+        return true;
+    }
+}
+
+function validacijaRadio() {
+    var pouzeceChecked = document.getElementById("pouzece").checked;
+    var karticaChecked = document.getElementById("kartica").checked;
+
+    if (!pouzeceChecked && !karticaChecked) {
+        let span = document.getElementById("pretplataSpan");
+        span.innerHTML = "Odaberite način plaćanja!";
+        span.classList.remove("uspesno");
+        span.classList.add("greska");
+
+        return false;
+    } 
+    else {
+        return true;
+    }
+}

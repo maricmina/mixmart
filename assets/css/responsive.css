@@ -92,8 +92,47 @@
     }
 }
 @media screen and (max-width: 500px) {
+    body, html {
+        overflow-x: hidden;
+    }
     #slika {
         margin-left: 60px;
+    }
+    #section1 {
+        height: 1200px;
+    }
+    #section4 {
+        height: 450px;
+    }
+    #mejl {
+        width: 100%;
+        position: relative;
+        top: 0px;
+        margin-left: 320px;
+    }
+    #taster {
+        width: 100%;
+        position: relative;
+        top: 100px;
+        right: 125px;
+        margin-bottom: 50px;
+    }
+    #section5 .form-group {
+        width: 100%;
+        text-align: center;
+    }
+    #section5 #prvaKolona input, select {
+        width: 50%;
+        margin: 0px auto;
+    }
+    #pretplatiSe {
+        width: 50%;
+    }
+    #muski, #zenski {
+        margin-left: 30px;
+    }
+    #drugaKolona .form-check {
+        margin-right: 30px;
     }
 }
 @media screen and (max-width: 430px) {

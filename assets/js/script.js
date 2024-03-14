@@ -44,7 +44,7 @@ function ispisiKnjige8Mart(nizKnjige8Mart) {
                                 <a class="card2" href="kupovina.html"><img src="${knjiga.src}" alt="${knjiga.naziv}" /><a>
                                 <h5 class="text-center mt-2">${knjiga.naziv}</h5>
                                 <p class="text-center mt-4"><del>${knjiga.cena.staraCena}</del></p>
-                                <h6>NOVA CENA: ${knjiga.cena.cenaSaSajta}</h6>
+                                <h6 class="text-center">NOVA CENA: ${knjiga.cena.cenaSaSajta}</h6>
                             </div>`;
     }
 

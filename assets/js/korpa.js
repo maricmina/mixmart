@@ -4,6 +4,18 @@ $(document).ready(function () {
     $(".btn-purchase").click(kupi);
 });
 
+function ispisiMeni(nizMeni) {
+    let sadrzajZaIspis = "";
+
+    for(let meni of nizMeni) {
+        sadrzajZaIspis += `<li class="nav-item mx-3">
+        <a class="nav-link text-dark hover" href="${meni.href}"><p>${meni.text}</p></a>
+      </li>`;
+    }
+    
+    $("#meniispis").html(sadrzajZaIspis);
+}
+
 function ispisiProizvode(niz) {
     let ispisProizvoda = "";
 
@@ -24,9 +36,10 @@ function ispisiProizvode(niz) {
 }
 
 function kupi() {
-    // alert('Thank you for your purchase');
     $(".cart-items").empty();
     updateKorpa();
+    var span = document.getElementById("spanKorpa");
+    span.innerHTML = "<br/>Uspešno ste obavili kupovinu!";
 }
 
 function ukloni(event) {

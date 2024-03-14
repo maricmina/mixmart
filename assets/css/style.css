@@ -69,7 +69,6 @@ a {
     }
 }
 
-
 header #nav-slika {
     width: 65px;
 }
@@ -268,7 +267,6 @@ header #nav-slika {
       }
 }
 
-
 #pokloni .col-xl-3 img {
     width: 150px;
     height: 180px;
@@ -298,7 +296,7 @@ header #nav-slika {
     transition: all 0.2s ease;
 }
 
-#mejl:hover {
+#mejl:hover, #ime:hover, #prezime:hover {
     border: 1px solid #00838d;
 }
 
@@ -317,7 +315,7 @@ header #nav-slika {
     text-align: center;
 }
 
-#taster:hover {
+#taster:hover, #pretplatiSe:hover {
     background-color: #fff;
     color: #00838d;
     border: 1px solid #00838d;
@@ -334,11 +332,12 @@ header #nav-slika {
        0   var(--_i,200%)/var(--_i,8px) 200% border-box no-repeat,
       linear-gradient(#00838d 0 0) padding-box no-repeat;
     transition: .3s, -webkit-mask-position .3s .3s;
-  }
-  .borderClass:hover {
+}
+
+.borderClass:hover {
     --_i: 100%;
     transition: .3s, -webkit-mask-size .3s .3s;
-  }
+}
 
 #cBox {
     position: relative;
@@ -353,8 +352,6 @@ footer {
 }
 
 #futer {
-    height: 380px;
-    background-color: #00838d;
     position: relative;
     top: 3200px;
 }
@@ -382,8 +379,6 @@ footer h4 {
     padding: 0px 40px;
     margin-bottom: 30px;
 }
-
-
 
 #autor {
     height: 550px;
@@ -517,19 +512,6 @@ a i {
     color: #00838d;
 }
 
-#section5 {
-    height: 500px;
-    background-color: #f8f9fa;
-}
-
-#section5 .col-6 {
-    height: 450px;
-}
-
-#section5 .col-6 .prvi input{
-    width: 100%;
-}
-
 #cBox {
     position: relative;
     top: 100px;
@@ -548,4 +530,50 @@ a i {
     height: 35px;
     position: relative;
     right: 30px;
+}
+
+#section5 {
+    height: 500px;
+}
+
+#section5 .form-group {
+    width: 50%;
+    margin: 0px auto;
+}
+
+#pretplatiSe {
+    width: 15%;
+    margin: 20px auto;
+    right: 0px;
+}
+
+#ime, #prezime {
+    margin-left: 0px;
+}
+
+#section5 input, #vrstaPretplate {
+    background-color: #f8f9fa;
+}
+
+#vrstaPretplate {
+    border: none;
+}
+
+.uspesno {
+    color: green;
+}
+
+.greska {
+    color: red;
+}
+
+#pretplatiSe {
+    width: 20%;
+    padding: 10px;
+    background-color: #00838d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: 0.2s ease;
+    text-align: center;
 }

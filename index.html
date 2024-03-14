@@ -97,41 +97,48 @@
             </div>
         </section>
 
-        <!-- <section id="section5">
-            <div class="container-fluid d-flex justify-content-around">
-                <div class="row" id="prijava">
-                    <h2 class="text-center pt-5 pb-2">Postani naš član!</h2>
-                    <h5 class="text-center mb-2">Osvoji dodatne popuste</h5>
-                    <span id="prijavaSpan" class="text-center displej mb-5">E-mail adresa mora početi slovom ili brojem i sadržati "@"</span>
-
-                    <div class="col-6 prvi d-flex justify-content-around mt-5">
-                        <form>
-                            Ime i prezime: <input type="text" id="ime" class="form-control mx-auto my-3 borderClass" />
-                            E-mail: <input type="text" id="mejlAdresa" class="form-control mx-auto my-3 borderClass" />
-                        </form>
-                    </div>
-                    <div class="col-6 d-flex justify-content-around mt-4">
-                        <form>
-                            Uzrast: 
-                            <select name="zanimanje" id="ddl" class="form-control mx-auto my-3 mb-3">
-                                <option value="0">Izaberi</option>
-                                <option value="1">Učenik</option>
-                                <option value="2">Student</option>
-                                <option value="3">Zaposlen</option>
-                            </select>
-                            <div id="obavestenja">
-
-                                <p>Pol: </p>
-                                <input type="radio" name="pol" id="m">Muški
-                                <input type="radio" name="pol" id="z">Ženski
+        <section id="section5">
+            <div class="container">
+                <div class="row " id="prijava">
+                    <h2 class="text-center my-5">Pretplata na sajt</h2>
+                    <form class="d-flex justify-content-center">
+                        <div id="prvaKolona" class="col-xl-6">
+                            <div class="form-group mt-3">
+                                <label for="ime">Ime:</label>
+                                <input type="text" class="form-control borderClass" id="ime" placeholder="Unesite ime">
                             </div>
-                                
-                        </form>
-                    </div>
-                    <input type="submit" value="Prijavi se" id="btn"/> <br/>
+                            <div class="form-group mt-3">
+                                <label for="prezime">Prezime:</label>
+                                <input type="text" class="form-control borderClass" id="prezime" placeholder="Unesite prezime">
+                            </div>
+                        </div>
+                        <div id="drugaKolona" class="col-xl-6">
+                            <div class="form-group mt-3">
+                                <label for="vrstaPretplate">Odaberi vrstu pretplate:</label>
+                                    <select class="form-control" id="vrstaPretplate">
+                                        <option value="0">Izaberi</option>
+                                        <option value="1">Besplatna</option>
+                                        <option value="2">Premium</option>
+                                    </select>
+                            </div>
+                            <div class="form-group mt-3">
+                                <label>Pol:</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="pol" id="muski" value="muski">
+                                    <label class="form-check-label" for="muski">Muški</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="pol" id="zenski" value="zenski">
+                                    <label class="form-check-label" for="zenski">Ženski</label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <span id="pretplataSpan" class="mt-5 text-center"></span>
+                    <button type="submit" id="pretplatiSe" onclick="validacijaForma()">Pretplati se</button>
                 </div>
             </div>
-        </section> -->
+        </section>
     </main>
 
     <footer>

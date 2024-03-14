@@ -140,8 +140,9 @@ function validacijaForma() {
 function validacijaImeIPrezime() {
     var imeRegEx = /^[A-Z][a-z]{2,10}( [A-Z][a-z]{2,15})?$/;
     var ime = document.getElementById('ime').value;
+    var prezime = document.getElementById('prezime').value;
 
-    if(imeRegEx.test(ime)) {
+    if(imeRegEx.test(ime) && imeRegEx.test(prezime)) {
         return true;
     }
     else {
